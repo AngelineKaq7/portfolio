@@ -3,315 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angeline T. Kaquilala - Portfolio</title>
+    <title>Angeline Kaquilala | Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Angeline T. Kaquilala, a full-stack developer and Information Systems student building practical web systems, clean interfaces, and reliable product experiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Pixel Grid Background -->
-    <div class="pixel-grid-bg"></div>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a href="#home" class="brand-mark" aria-label="Angeline Kaquilala home">AK</a>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <div class="nav-content">
-                <div class="logo">&lt;AK /&gt;</div>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <span class="menu-icon" id="menuIcon">☰</span>
-                </button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation" aria-expanded="false">
+                <span id="menuIcon">Menu</span>
+            </button>
 
-                <div class="nav-links desktop-nav" id="navLinks">
-                    <button class="nav-btn active" data-section="home">home</button>
-                    <button class="nav-btn" data-section="about">about</button>
-                    <button class="nav-btn" data-section="projects">projects</button>
-                    <button class="nav-btn" data-section="showcase">showcase</button>
-                    <button class="nav-btn" data-section="achievements">achievements</button>
-                    <button class="nav-btn" data-section="certifications">certifications</button>
-                    <button class="nav-btn" data-section="contact">contact</button>
-                </div>
-            </div>
-
-            <div class="mobile-nav" id="mobileNav">
-                <button class="nav-btn mobile active" data-section="home">home</button>
-                <button class="nav-btn mobile" data-section="about">about</button>
-                <button class="nav-btn mobile" data-section="projects">projects</button>
-                <button class="nav-btn mobile" data-section="showcase">showcase</button>
-                <button class="nav-btn mobile" data-section="achievements">achievements</button>
-                <button class="nav-btn mobile" data-section="certifications">certifications</button>
-                <button class="nav-btn mobile" data-section="contact">contact</button>
+            <div class="nav-links" id="navLinks">
+                <button class="nav-btn active" data-section="home">Home</button>
+                <button class="nav-btn" data-section="about">Profile</button>
+                <button class="nav-btn" data-section="projects">Work</button>
+                <button class="nav-btn" data-section="achievements">Proof</button>
+                <button class="nav-btn" data-section="certifications">Credentials</button>
+                <button class="nav-btn nav-btn-cta" data-section="contact">Hire</button>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="section hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="profile-picture">
-                    <div class="profile-box pixel-corners">
-                        <img src="profile.jpg" alt="Angeline Kaquilala" class="profile-img">
+    <main>
+        <section id="home" class="section hero-section">
+            <div class="hero-media">
+                <img src="profile.jpg" alt="Portrait of Angeline Kaquilala" class="hero-portrait">
+                <div class="hero-shade"></div>
+            </div>
+
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Full-Stack Developer / Information Systems</p>
+                    <h1>Angeline Kaquilala</h1>
+                    <p class="hero-lede">A builder with product instinct, disciplined follow-through, and the kind of fast learning curve tech teams quietly fight to hire.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">Review Work</a>
+                        <a href="mailto:akaquilala@mcm.edu.ph" class="btn btn-secondary">Contact</a>
                     </div>
                 </div>
-                
-                <div class="hero-info">
-                    <h1 class="hero-title">ANGELINE T. KAQUILALA</h1>
-                    <p class="hero-subtitle">Full Stack Developer</p>
-                    <p class="hero-subtitle">Freelance Programmer</p>
-                    <p class="hero-text">2nd Year BS Information Systems</p>
-                    <p class="hero-text">Mapua MCM</p>
-                    <button class="explore-btn pixel-corners" data-section="projects">
-                        Explore <span class="chevron">▼</span>
-                    </button>
+
+                <aside class="hero-panel" aria-label="Candidate highlights">
+                    <div>
+                        <span class="metric-value">5+</span>
+                        <span class="metric-label">Live web projects shipped</span>
+                    </div>
+                    <div>
+                        <span class="metric-value">4</span>
+                        <span class="metric-label">Verified certificates</span>
+                    </div>
+                    <div>
+                        <span class="metric-value">2025</span>
+                        <span class="metric-label">OJT experience at ASKTech Power</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="about" class="section profile-section">
+            <div class="container split-layout">
+                <div>
+                    <p class="section-kicker">Candidate Signal</p>
+                    <h2>Not just learning tech. Practicing the habits that make developers dependable.</h2>
+                </div>
+                <div class="profile-copy">
+                    <p>I'm Angeline, a BS Information Systems student at Mapua Malayan Colleges Mindanao, full-stack developer, freelance programmer, and student leader. I build practical web products with clear user flows, clean interfaces, and enough operational thinking to make them useful beyond a demo.</p>
+                    <p>For a recruiting team, the signal is simple: I can learn quickly, ship visible work, communicate ownership, and keep improving the product after the first version works.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container small">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-box pixel-corners">
-                <p class="about-text">
-                    Hello! I'm <span class="highlight">Angeline</span>, a passionate full-stack developer 
-                    and freelance programmer currently in my 2nd year of studying Information Systems at 
-                    <span class="highlight">Mapua Malayan Colleges of Mindanao</span>.
-                </p>
-                <p class="about-text secondary">
-                    I love creating interactive web experiences and turning ideas into reality through code. 
-                    My journey in tech has been filled with exciting projects, achievements, and continuous learning. 
-                    Let's build something amazing together!
-                </p>
+            <div class="container capability-strip">
+                <div class="capability-card">
+                    <span>01</span>
+                    <h3>Frontend Execution</h3>
+                    <p>Responsive interfaces, interaction details, and user journeys that feel intentional.</p>
+                </div>
+                <div class="capability-card">
+                    <span>02</span>
+                    <h3>Full-Stack Thinking</h3>
+                    <p>APIs, data flow, admin/user surfaces, and working deployments.</p>
+                </div>
+                <div class="capability-card">
+                    <span>03</span>
+                    <h3>Team Readiness</h3>
+                    <p>Leadership experience, academic consistency, and a bias toward accountable delivery.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <a href="https://akaquilala.github.io/M1FA2_KAQUILALA/" target="_blank" rel="noopener noreferrer" class="project-card pixel-corners">
-                    <div class="project-emoji">🌿</div>
-                    <h3 class="project-title">GreenSense</h3>
-                    <div class="project-footer">
-                        <span class="project-view">View →</span>
-                        <span class="external-icon">↗</span>
-                    </div>
+        <section id="projects" class="section work-section">
+            <div class="container section-heading">
+                <p class="section-kicker">Selected Work</p>
+                <h2>Projects that show range, initiative, and product sense.</h2>
+            </div>
+
+            <div class="container featured-work">
+                <a href="https://samplesmartqueue.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-card work-card-large">
+                    <span class="work-index">01</span>
+                    <span class="work-tag">System Design</span>
+                    <h3>Smart Queue PH</h3>
+                    <p>Queue management system with separate user and admin surfaces. Strongest signal for real-world workflow thinking.</p>
+                    <span class="work-link">Open user panel</span>
                 </a>
-                <a href="https://thecozycornerbykaquilala.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card pixel-corners">
-                    <div class="project-emoji">☕</div>
-                    <h3 class="project-title">The Cozy Corner</h3>
-                    <div class="project-footer">
-                        <span class="project-view">View →</span>
-                        <span class="external-icon">↗</span>
-                    </div>
-                </a>
-                <a href="https://akaquilala.github.io/KAQUILALA_IT103_M1FA3/" target="_blank" rel="noopener noreferrer" class="project-card pixel-corners">
-                    <div class="project-emoji">✨</div>
-                    <h3 class="project-title">JavaScript MPS</h3>
-                    <div class="project-footer">
-                        <span class="project-view">View →</span>
-                        <span class="external-icon">↗</span>
-                    </div>
-                </a>
-                <a href="https://kaquilala-webapp-demo.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card pixel-corners">
-                    <div class="project-emoji">🎨</div>
-                    <h3 class="project-title">Tailwind CSS Guide</h3>
-                    <div class="project-footer">
-                        <span class="project-view">View →</span>
-                        <span class="external-icon">↗</span>
-                    </div>
+
+                <a href="https://samplesmartqueue.vercel.app/admin.html" target="_blank" rel="noopener noreferrer" class="work-card">
+                    <span class="work-index">02</span>
+                    <span class="work-tag">Admin Flow</span>
+                    <h3>Smart Queue Admin</h3>
+                    <p>Operational control surface for managing queue activity and service state.</p>
+                    <span class="work-link">Open admin panel</span>
                 </a>
 
-                <!-- SA-Project: SMART QUEUE PH -->
-                <div class="project-card sa-project pixel-corners">
-                    <div class="sa-badge">SA Project</div>
-                    <div class="project-emoji">🎟️</div>
-                    <h3 class="project-title">Smart Queue PH</h3>
-                    <p class="project-desc">Queue management system with user & admin panels</p>
-                    <div class="sa-links">
-                        <a href="https://samplesmartqueue.vercel.app/" target="_blank" rel="noopener noreferrer" class="sa-link pixel-corners">
-                            <span>👤 User Panel</span>
-                            <span class="external-icon">↗</span>
-                        </a>
-                        <a href="https://samplesmartqueue.vercel.app/admin.html" target="_blank" rel="noopener noreferrer" class="sa-link pixel-corners">
-                            <span>🔧 Admin Panel</span>
-                            <span class="external-icon">↗</span>
-                        </a>
+                <a href="https://akaquilala-api.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-card accent-card">
+                    <span class="work-index">03</span>
+                    <span class="work-tag">API Project</span>
+                    <h3>Recipe Finder</h3>
+                    <p>Search-driven web experience that connects interface decisions with external data.</p>
+                    <span class="work-link">View project</span>
+                </a>
+            </div>
+
+            <div class="container project-list">
+                <a href="https://akaquilala.github.io/M1FA2_KAQUILALA/" target="_blank" rel="noopener noreferrer">GreenSense <span>Environmental web concept</span></a>
+                <a href="https://thecozycornerbykaquilala.vercel.app/" target="_blank" rel="noopener noreferrer">The Cozy Corner <span>Brand-style web experience</span></a>
+                <a href="https://akaquilala.github.io/KAQUILALA_IT103_M1FA3/" target="_blank" rel="noopener noreferrer">JavaScript MPS <span>Core scripting practice</span></a>
+                <a href="https://kaquilala-webapp-demo.vercel.app/" target="_blank" rel="noopener noreferrer">Tailwind CSS Guide <span>UI implementation demo</span></a>
+            </div>
+        </section>
+
+        <section id="achievements" class="section proof-section">
+            <div class="container proof-grid">
+                <div>
+                    <p class="section-kicker">Hiring Proof</p>
+                    <h2>Consistency, leadership, and early professional exposure.</h2>
+                </div>
+                <div class="proof-list">
+                    <div class="proof-item">
+                        <span>Academic Excellence</span>
+                        <p>President's List, all terms, 2024-2025.</p>
+                    </div>
+                    <div class="proof-item">
+                        <span>Academic Excellence</span>
+                        <p>Dean's List, all terms, 2025.</p>
+                    </div>
+                    <div class="proof-item">
+                        <span>Leadership</span>
+                        <p>ISSA First Year Representative for 2024-2025.</p>
+                    </div>
+                    <div class="proof-item">
+                        <span>Leadership</span>
+                        <p>ISSA Internal Vice President for 2025-2026.</p>
+                    </div>
+                    <div class="proof-item">
+                        <span>Industry Exposure</span>
+                        <p>2025 On-the-Job Training at ASKTech Power.</p>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Latest Showcase -->
-    <section id="showcase" class="section">
-        <div class="container small">
-            <h2 class="section-title">Latest Project Showcase</h2>
-            <a href="https://akaquilala-api.vercel.app/" target="_blank" rel="noopener noreferrer" class="showcase-card pixel-corners">
-                <div class="showcase-content">
-                    <div class="showcase-emoji">🍳</div>
-                    <h3 class="showcase-title">Recipe Finder</h3>
-                    <p class="showcase-subtitle">My Latest Creation</p>
-                    <div class="showcase-btn pixel-corners">
-                        <span>VIEW PROJECT</span>
-                        <span class="external-icon">↗</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Achievements -->
-    <section id="achievements" class="section">
-        <div class="container small">
-            <h2 class="section-title">
-                <span class="title-icon">🏅</span>
-                Achievements
-            </h2>
-            <div class="achievements-list">
-                <div class="achievement-card pixel-corners">
-                    <div class="achievement-icon">🏆</div>
-                    <p class="achievement-text">President's List – All Terms [2024-2025]</p>
-                </div>
-                <div class="achievement-card pixel-corners">
-                    <div class="achievement-icon">🏆</div>
-                    <p class="achievement-text">Dean's List – All Terms [2025-2025]</p>
-                </div>
-                <div class="achievement-card pixel-corners">
-                    <div class="achievement-icon">🏆</div>
-                    <p class="achievement-text">2024-2025 First Year Representative – ISSA</p>
-                </div>
-                <div class="achievement-card pixel-corners">
-                    <div class="achievement-icon">🏆</div>
-                    <p class="achievement-text">2025-2026 Internal Vice President – ISSA</p>
-                </div>
-                <div class="achievement-card pixel-corners">
-                    <div class="achievement-icon">🏆</div>
-                    <p class="achievement-text">2025 On-the-Job Training — ASKTech Power</p>
-                </div>
+        <section id="certifications" class="section credential-section">
+            <div class="container section-heading">
+                <p class="section-kicker">Credentials</p>
+                <h2>Certificates that back the learning path.</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <div class="cert-card pixel-corners">
-                    <img src="firstcert.png" alt="Certificate 1" class="cert-img">
-                </div>
-                <div class="cert-card pixel-corners">
-                    <img src="secondcert.png" alt="Certificate 2" class="cert-img">
-                </div>
-                <div class="cert-card pixel-corners">
-                    <img src="thirdcert.png" alt="Certificate 3" class="cert-img">
-                </div>
-                <div class="cert-card pixel-corners">
-                    <img src="fourthcert.png" alt="Certificate 4" class="cert-img">
-                </div>
+            <div class="container certifications-grid">
+                <figure class="cert-card">
+                    <img src="firstcert.png" alt="Certificate earned by Angeline Kaquilala">
+                </figure>
+                <figure class="cert-card">
+                    <img src="secondcert.png" alt="Certificate earned by Angeline Kaquilala">
+                </figure>
+                <figure class="cert-card">
+                    <img src="thirdcert.png" alt="Certificate earned by Angeline Kaquilala">
+                </figure>
+                <figure class="cert-card">
+                    <img src="fourthcert.png" alt="Certificate earned by Angeline Kaquilala">
+                </figure>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Form -->
-    <section id="contact" class="section">
-        <div class="container tiny">
-            <h2 class="section-title">
-                <span class="title-icon">✉️</span>
-                Contact Me
-            </h2>
-            <div class="contact-box pixel-corners">
-                <div class="contact-emoji">💌</div>
+        <section id="contact" class="section contact-section">
+            <div class="container contact-grid">
+                <div>
+                    <p class="section-kicker">Next Step</p>
+                    <h2>Bring me into the interview loop.</h2>
+                    <p class="contact-copy">I'm interested in internships, junior developer roles, freelance builds, and product-minded teams where strong fundamentals and fast growth matter.</p>
+                    <a href="mailto:akaquilala@mcm.edu.ph" class="mail-link">akaquilala@mcm.edu.ph</a>
+                </div>
+
                 <form id="contactForm" class="contact-form">
-                    <div class="form-group">
-                        <label class="form-label">Name</label>
-                        <input type="text" id="nameInput" class="form-input pixel-corners" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input type="email" id="emailInput" class="form-input pixel-corners" placeholder="your.email@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Message</label>
-                        <textarea id="messageInput" rows="5" class="form-input pixel-corners" placeholder="Type your message here..." required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn pixel-corners">
-                        SEND MESSAGE
-                    </button>
+                    <label>
+                        <span>Name</span>
+                        <input type="text" id="nameInput" name="name" placeholder="Your name" required>
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" id="emailInput" name="email" placeholder="you@company.com" required>
+                    </label>
+                    <label>
+                        <span>Message</span>
+                        <textarea id="messageInput" name="message" rows="5" placeholder="Tell me about the role, project, or opportunity." required></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p class="footer-text">© 2026 Angeline T. Kaquilala | Built with Code</p>
-        <p class="footer-email">akaquilala@mcm.edu.ph</p>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <span>Angeline T. Kaquilala</span>
+            <span>Full-Stack Developer / Portfolio 2026</span>
+        </div>
     </footer>
 
-    <style>
-        /* SA Project card */
-        .project-card.sa-project {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            cursor: default;
-        }
-
-        .sa-badge {
-            position: absolute;
-            top: -6px;
-            right: -6px;
-            background: #fcd34d;
-            color: #92400e;
-            font-family: 'Press Start 2P', monospace;
-            font-size: 6px;
-            padding: 4px 6px;
-            border: 3px solid #b45309;
-        }
-
-        .project-desc {
-            font-family: 'Press Start 2P', monospace;
-            font-size: 7px;
-            color: #d97706;
-            line-height: 1.8;
-            margin-top: 2px;
-        }
-
-        .sa-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: auto;
-            padding-top: 10px;
-        }
-
-        .sa-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 10px;
-            background: #fef9c3;
-            border: 3px solid #fcd34d;
-            color: #b45309;
-            font-family: 'Press Start 2P', monospace;
-            font-size: 7px;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s, border-color 0.2s;
-        }
-
-        .sa-link:hover {
-            background: #fcd34d;
-            color: #92400e;
-            border-color: #b45309;
-        }
-    </style>
     <script src="script.js"></script>
 </body>
 </html>

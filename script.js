@@ -1,97 +1,98 @@
-// Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileNav = document.getElementById('mobileNav');
-const menuIcon = document.getElementById('menuIcon');
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const navLinks = document.getElementById("navLinks");
+const menuIcon = document.getElementById("menuIcon");
+const navButtons = document.querySelectorAll(".nav-btn");
+const sections = document.querySelectorAll(".section");
+const siteHeader = document.querySelector(".site-header");
 
-mobileMenuBtn.addEventListener('click', () => {
-    mobileNav.classList.toggle('active');
-    menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
-});
-
-// Navigation
-const navButtons = document.querySelectorAll('.nav-btn');
-let activeSection = 'home';
-
-navButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const section = button.getAttribute('data-section');
-        scrollToSection(section);
-    });
-});
-
-function scrollToSection(section) {
-    activeSection = section;
-    
-    // Update active states
-    navButtons.forEach(btn => {
-        if (btn.getAttribute('data-section') === section) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-    
-    // Close mobile menu
-    mobileNav.classList.remove('active');
-    menuIcon.textContent = '☰';
-    
-    // Scroll to section
-    const element = document.getElementById(section);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// Explore button
-const exploreBtn = document.querySelector('.explore-btn');
-if (exploreBtn) {
-    exploreBtn.addEventListener('click', () => {
-        scrollToSection('projects');
+function setActiveSection(sectionId) {
+    navButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.section === sectionId);
     });
 }
 
-// Contact Form
-const contactForm = document.getElementById('contactForm');
-const nameInput = document.getElementById('nameInput');
-const emailInput = document.getElementById('emailInput');
-const messageInput = document.getElementById('messageInput');
+function scrollToSection(sectionId) {
+    const target = document.getElementById(sectionId);
+    if (!target) return;
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = nameInput.value;
-    const email = emailInput.value;
-    const message = messageInput.value;
-    
-    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+    target.scrollIntoView({ behavior: "smooth" });
+    setActiveSection(sectionId);
+    navLinks.classList.remove("active");
+    mobileMenuBtn.setAttribute("aria-expanded", "false");
+    menuIcon.textContent = "Menu";
+}
+
+mobileMenuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+    mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
+    menuIcon.textContent = isOpen ? "Close" : "Menu";
+});
+
+navButtons.forEach((button) => {
+    button.addEventListener("click", () => scrollToSection(button.dataset.section));
+});
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById("nameInput").value.trim();
+    const email = document.getElementById("emailInput").value.trim();
+    const message = document.getElementById("messageInput").value.trim();
+    const subject = encodeURIComponent(`Portfolio opportunity for ${name || "Angeline"}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    
+
     window.location.href = `mailto:akaquilala@mcm.edu.ph?subject=${subject}&body=${body}`;
 });
 
-// Intersection Observer for active section detection
-const sections = document.querySelectorAll('.section');
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.3
-};
+const sectionObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                setActiveSection(entry.target.id);
+            }
+        });
+    },
+    {
+        root: null,
+        rootMargin: "-35% 0px -45% 0px",
+        threshold: 0
+    }
+);
 
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const sectionId = entry.target.id;
-            navButtons.forEach(btn => {
-                if (btn.getAttribute('data-section') === sectionId) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-    });
-}, observerOptions);
+sections.forEach((section) => sectionObserver.observe(section));
 
-sections.forEach(section => {
-    sectionObserver.observe(section);
+const revealTargets = document.querySelectorAll(
+    ".split-layout, .section-heading, .capability-card, .work-card, .project-list a, .proof-item, .cert-card, .contact-grid"
+);
+
+revealTargets.forEach((target, index) => {
+    target.classList.add("reveal");
+    target.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
 });
+
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+        });
+    },
+    {
+        root: null,
+        rootMargin: "0px 0px -12% 0px",
+        threshold: 0.12
+    }
+);
+
+revealTargets.forEach((target) => revealObserver.observe(target));
+
+function updateHeaderState() {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
+}
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
